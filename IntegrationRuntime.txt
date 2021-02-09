@@ -2,8 +2,21 @@ ADF:
 
 Activity defines the action to be performed.
 A linked service defines a target data store or a compute service. 
-#An integration runtime provides the bridge between the activity and the linked services. It is referenced by the linked service and provides the
-# compute environment where the activity either runs or gets dispatched
-from. This way, the activity can be performed in the region closest possible
-to the target data store or compute service in the most performant way
-while meeting security and compliance needs.
+An integration runtime provides the bridge between the activity and the linked services. It is referenced by the linked service and provides the
+compute environment where the activity either runs or gets dispatched from. This way, the activity can be performed in the region closest possible
+to the target data store or compute service in the most performant way while meeting security and compliance needs.
+
+Azure IR:
+
+The Azure integration runtime can be used for data movement and orchestration of data stores and compute services that are in the public
+network. For example, if we’re copying data from public endpoints like Amazon S3 to Azure Blob in a public environment, then the Azure IR
+works well and provide you with cloud scale for big data movement.
+
+We can set how many data integration units to use on the Copy activity, and the compute size of the Azure IR is elastically scaled
+up accordingly without we having to explicitly adjust the size of the Azure IR.
+
+LIMITATIONS:
+
+The only drawback of the Azure IR is it cannot be used if our data stores are behind a firewall because then it would require inbound access
+through the firewall, which may not be agreeable.
+
