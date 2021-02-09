@@ -21,6 +21,9 @@
 # Type: String, Required:  No
 
 * Acitivities: activities The pipeline can have one or more activities defined within it.
+# Activities represent a processing step in a pipeline. These are specific tasks that compose the overall pipeline. For example, we might use a
+# Spark activity, which runs a Spark query against Azure Databricks or an HDInsight cluster, to transform or analyze your data. ADF
+# supports three types of activities: data movement (copy activities), data transform (compute activities), and control activities.
 # Type: Array, Required: Yes
 
 * parameters The parameters property can have one or more parameters defined within the pipeline, making your pipeline flexible for reuse.
