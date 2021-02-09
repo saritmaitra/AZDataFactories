@@ -6,14 +6,23 @@ Install-Module -Name AzRM
 # update existing Azure PowerShell module
 Update-Module -Name AzRM
 
-Connect-AzRmAccount
+Connect-AzAccount
 
-Get-AzRmSubscription
+Get-AzSubscription
 
 # In case of multiple subscriptions associated with account, run the following command to select the subscription that you want to work with.
 # Replace SubscriptionId with the ID of my Azure subscription:
-Select-AzRmSubscription -SubscriptionId "<SubscriptionId>"
 
-# Create a Data Factory
+Select-AzSubscription -SubscriptionId "<SubscriptionId>"
 
-Set-AzRmDataFactoryV2 -ResourceGroupName rgname -Location eastus -Name adfdemo
+# Define a variable for the resource group name that you use in PowerShell commands later
+$resourceGroupName = "ADFQuickStartRG";
+
+# create the Azure resource group
+$ResGrp = New-AzResourceGroup $resourceGroupName -location 'East US'
+
+# Define a variable for the data factory name
+$dataFactoryName = "ADFQuickStartFactory";
+
+# To create the data factory, run the following Set-AzDataFactoryV2 cmdlet, using the Location and ResourceGroupName property from the $ResGrp variable:
+$DataFactory = Set-AzDataFactoryV2 -ResourceGroupName $ResGrp.ResourceGroupName `-Location $ResGrp.Location -Name $dataFactoryName
