@@ -1,0 +1,15 @@
+* dataset is the representation or reference to the actual data in the data store.
+# For a data movement activity like a Copy activity, we can set a source and a sink dataset accordingly for the data movement.
+# Fore example, copy data from Azure Blob Storage to a SQL database, you create two linked services: Azure Blob Storage and Azure SQL
+# Database. Then, create two datasets: an Azure Blob dataset (which refers to the Azure Storage linked service) and an Azure SQL table dataset
+# (which refers to the Azure SQL Database linked service). The Azure Storage and Azure SQL Database linked services contain connection
+# strings that Azure Data Factory uses at runtime to connect to your Azure storage and Azure SQL database, respectively. The Azure Blob dataset
+# specifies the blob container and blob folder that contains the input blobs in your Blob Storage. The Azure SQL table dataset specifies the SQL table
+# in our SQL database to which the data is to be copied.
+
+{
+"name": "<name of dataset>",
+"properties": {
+"type": "<type of dataset: AzureBlob, AzureSql etc...>",
+"linkedServiceName": {
+"referenceName": "<name of linked service>",
