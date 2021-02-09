@@ -15,7 +15,7 @@
 * name: This specifies the name of the activity. Specify a name that represents the action that the activity performs.
 # Maximum number of characters: 55. Must start with a letter, a number, or an underscore (_).
 # Following characters are not allowed: . + ? / < > * % & : \
-Required: Yes
+# Required: Yes
 
 * description: This specifies the text describing what the activity or is used for.
 # Required: Yes
