@@ -1,26 +1,26 @@
 {
-"name": "MyPipelineName",
-"properties": {
-"activities": [
-{
-"name": "MyCopyBlobtoSqlActivity"
-"type": "Copy",
-"typeProperties": {
-...
-},
-"policy": {
-"timeout": "00:10:00",
-"retry": 1,
-"retryIntervalInSeconds": 60,
-"secureOutput": true
-}
-}
-],
-"parameters": {
-...
-}
-}
-}
+  "name": "MyPipelineName",
+  "properties": {
+    "activities": [
+      {
+        "name": "MyCopyBlobtoSqlActivity"
+        "type": "Copy",
+        "typeProperties": {
+        ...
+      },
+      "policy": {
+      "timeout": "00:10:00",
+      "retry": 1,
+      "retryIntervalInSeconds": 60,
+      "secureOutput": true
+      }
+      }
+    ],
+    "parameters": {
+      ...
+    }
+    }
+  }
 
 * timeout: Specifies the timeout for the activity to run.
 # Allowed Values: Timespan, Required: No. Default timeout is 7 days.
