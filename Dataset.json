@@ -8,8 +8,36 @@
 # in our SQL database to which the data is to be copied.
 
 {
-"name": "<name of dataset>",
-"properties": {
-"type": "<type of dataset: AzureBlob, AzureSql etc...>",
-"linkedServiceName": {
-"referenceName": "<name of linked service>",
+  "name": "<name of dataset>",
+  "properties": {
+    "type": "<type of dataset: AzureBlob, AzureSql etc...>",
+    "linkedServiceName": {
+      "referenceName": "<name of linked service>",
+      "type": "LinkedServiceReference",
+    },
+    "structure": [
+      {
+        "name": "<Name of the column>",
+        "type": "<Name of the type>"
+      }
+    ],
+    "typeProperties": {
+      "<type specific property>": "<value>",
+      "<type specific property 2>": "<value 2>",
+    }
+  }
+}
+
+
+# name: This specifies the name of the dataset. It has the same naming rules as the ADF instance name.
+# Required: Yes
+
+# type: This specifies the type of the dataset. Specify one of the types supported by the ADF instance (for example, AzureBlob, AzureSqlTable).
+# Required: Yes
+
+# structure: This specifies the schema of the dataset. For details, see “Dataset Structure.”
+# Required: No
+
+# typeProperties: The type properties are different for each type (for example, AzureBlob, AzureSqlTable). For details on the supported types and their
+# properties, see “Dataset Type.”
+# Required: Yes
