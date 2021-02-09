@@ -1,0 +1,39 @@
+{
+"name": "Execution Activity Name",
+"description": "description",
+"type": "<ActivityType>",
+"typeProperties":
+{
+},
+"linkedServiceName": "MyLinkedService",
+"policy":
+{
+},
+"dependsOn":
+{
+}
+}
+
+* name: Name of the activity. Specify a name that represents the action that the activity performs.
+# Required: Yes
+
+* description:  Text describing what the activity is or is used for.
+# Required: Yes
+
+* type: Type of the activity. Different types of activities include data movement, data transformation, and control activities.
+# Required: Yes
+
+* linkedServiceName: Name of the linked service used by the activity.
+# An activity may require that we specify the linked service that links to the required compute environment.
+# Required: Yes for HDInsight Activity, Azure Machine Learning, Batch Scoring Activity, and Stored Procedure Activity
+# No for all others
+
+* typeProperties: Properties in the typeProperties section depend on each type of activity.
+# Required: No
+
+* policy: Policies that affect the runtime behavior of the activity. This property includes timeout and retry behavior. If
+# it is not specified, default values are used. For more information, see the “Activity “Policy” section.
+# Required: No
+
+* dependsOn: Defines activity dependencies and how subsequent activities depend on previous activities. For
+# more information, see the “Activity Dependency” section.
