@@ -1,8 +1,8 @@
 ADF:
 
-# Activity defines the action to be performed.
-# A linked service defines a target data store or a compute service. 
-# An integration runtime provides the bridge between the activity and the linked services. It is referenced by the linked service and provides the
+Activity defines the action to be performed.
+A linked service defines a target data store or a compute service. 
+#An integration runtime provides the bridge between the activity and the linked services. It is referenced by the linked service and provides the
 # compute environment where the activity either runs or gets dispatched
 from. This way, the activity can be performed in the region closest possible
 to the target data store or compute service in the most performant way
