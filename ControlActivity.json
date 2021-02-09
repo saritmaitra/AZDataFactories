@@ -1,15 +1,15 @@
 # Control activities have the following top-level structure
 
 {
-"name": "Control Activity Name",
-"description": "description",
-"type": "<ActivityType>",
-"typeProperties":
-{
-},
-"dependsOn":
-{
-}
+  "name": "Control Activity Name",
+  "description": "description",
+  "type": "<ActivityType>",
+  "typeProperties":
+  {
+  },
+  "dependsOn":
+  {
+  }
 }
 
 * name: This specifies the name of the activity. Specify a name that represents the action that the activity performs.
