@@ -1,14 +1,16 @@
+# pipeline in JSON format
+
 {
-"name": "PipelineName",
-"properties":
-{
-"description": "pipeline description",
-"activities":
-[
-],
-"parameters": {
-}
-}
+  "name": "PipelineName",
+  "properties":
+  {
+    "description": "pipeline description",
+    "activities":
+    [
+    ],
+    "parameters": {
+    }
+  }
 }
 
 * PipelineName: Specifies the name of the pipeline. Use a name that represents the action that the pipeline performs.
