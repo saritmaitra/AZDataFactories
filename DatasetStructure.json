@@ -21,3 +21,9 @@
 
 # format: Format string to be used when the type is a .NET type: Datetime or Datetimeoffset.
 # Required: No
+
+# When to Specify a Dataset Structure?
+# When we are copying data within strong schema-based relational stores and want to map source columns to sink columns and their names are not
+# the same, we can specify a dataset structure. 
+# We may also specify a dataset structure when our source contains no schema or a weak schema like text files in Blob Storage, which needs to be
+# converted to native types in sink during the Copy activity.
