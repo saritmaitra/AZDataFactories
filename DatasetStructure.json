@@ -3,8 +3,21 @@
 
 "structure":
 [
-{ "name": "userid", "type": "Int64"},
-{ "name": "name", "type": "String"},
-{ "name": "lastlogindate", "type": "Datetime", "culture":
-"fr-fr", "format": "ddd-MM-YYYY"}
+  { "name": "userid", "type": "Int64"},
+  { "name": "name", "type": "String"},{ "name": "lastlogindate", "type": "Datetime", "culture":
+                                       "fr-fr", "format": "ddd-MM-YYYY"}
 ]
+
+
+# name:  Name of the column. 
+# Required: Yes
+
+# type: Data type of the column. Azure Data Factory supports the following interim data types as allowed values: Int16, Int32, Int64, Single, Double, Decimal, Byte[], Boolean,
+# String, Guid, Datetime, Datetimeoffset, and Timespan.
+# Required: No
+
+# culture: .NET-based culture to be used when the type is a .NET type: Datetime or Datetimeoffset. The default is en-us.
+# Required: No
+
+# format: Format string to be used when the type is a .NET type: Datetime or Datetimeoffset.
+# Required: No
