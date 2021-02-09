@@ -1,0 +1,10 @@
+# This is optional. It defines the schema of the dataset by containing a collection of names and data types of columns. We use the structure
+# section to provide type information that is used to convert types and map columns from the source to the destination
+
+"structure":
+[
+{ "name": "userid", "type": "Int64"},
+{ "name": "name", "type": "String"},
+{ "name": "lastlogindate", "type": "Datetime", "culture":
+"fr-fr", "format": "ddd-MM-YYYY"}
+]
