@@ -1,0 +1,40 @@
+# We can create a dependency between two activities in ADF. This is extremely helpful while you want to run downstream activities on certain
+# conditions or dependencies. ADF lets us build the dependencies based on various conditions such as Succeeded, Failed, Skipped, and Completed.
+# For example, when Activity A is successfully executed, then run Activity B. If Activity A fails, then run Activity C. Activity B depends on Activity A succeeding.
+
+
+{
+"name": "PipelineName",
+"properties":
+{
+"description": "pipeline description",
+"activities": [
+{
+"name": "MyFirstActivity",
+"type": "Copy",
+"typeProperties": {
+},
+"linkedServiceName": {
+}
+},
+{
+"name": "MySecondActivity",
+"type": "Copy",
+"typeProperties": {
+},
+"linkedServiceName": {
+},
+"dependsOn": [
+{
+"activity": "MyFirstActivity",
+"dependencyConditions": [
+"Succeeded"
+]
+}
+]
+}
+],
+"parameters": {
+}
+}
+}
