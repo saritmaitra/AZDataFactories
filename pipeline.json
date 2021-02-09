@@ -1,0 +1,12 @@
+{
+"name": "PipelineName",
+"properties":
+{
+"description": "pipeline description",
+"activities":
+[
+],
+"parameters": {
+}
+}
+}
