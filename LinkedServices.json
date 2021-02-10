@@ -1,4 +1,4 @@
-# Linked services are like connection strings that define the connectivity information that Azure Data Factory needs to connect to the respective
+# Linked services are like connection strings that define the connectivity information that ADF needs to connect to the respective
 # external data stores or compute engines
 
 # EXAMPLE:
