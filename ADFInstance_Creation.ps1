@@ -1,4 +1,3 @@
-cd .\.azure # .azure directory in local machine
 
 # If not installed already
 Install-Module -Name AzRM
