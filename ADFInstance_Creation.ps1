@@ -5,6 +5,8 @@ Install-Module -Name AzRM
 # update existing Azure PowerShell module
 Update-Module -Name AzRM
 
+# Log-in to PS
+
 Connect-AzAccount
 
 Get-AzSubscription
