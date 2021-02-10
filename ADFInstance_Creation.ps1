@@ -31,6 +31,6 @@ $DataFactory = Set-AzDataFactoryV2 -ResourceGroupName $ResGrp.ResourceGroupName 
 # The name of ADF must be globally unique. If we receive the following error, change the name and try again.
 * The specified Data Factory name 'ADFv2QuickStartDataFactory' is already in use. Data Factory names must be globally unique.
 
-# For a list of Azure regions in which Data Factory is currently available, select the regions that interest you on the following page, 
+# For a list of Azure regions in which Data Factory is currently available, select the regions of interest, 
 # and then expand Analytics to locate Data Factory: Products available by region. 
 # The data stores (Azure Storage, Azure SQL Database, etc.) and computes (HDInsight, etc.) used by data factory can be in other regions.
