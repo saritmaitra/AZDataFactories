@@ -16,13 +16,14 @@ Get-AzSubscription
 Select-AzSubscription -SubscriptionId "<SubscriptionId>"
 
 # Define a variable for the resource group name that you use in PowerShell commands later
-$resourceGroupName = "ADFQuickStartRG";
+$resourceGroupName = "ADFSaritRG";
 
 # create the Azure resource group
 $ResGrp = New-AzResourceGroup $resourceGroupName -location 'East US'
 
 # Define a variable for the data factory name
-$dataFactoryName = "ADFQuickStartFactory";
+$dataFactoryName = "ADFSaritFactory";
 
 # To create the data factory, run the following Set-AzDataFactoryV2 cmdlet, using the Location and ResourceGroupName property from the $ResGrp variable:
-$DataFactory = Set-AzDataFactoryV2 -ResourceGroupName $ResGrp.ResourceGroupName `-Location $ResGrp.Location -Name $dataFactoryName
+$DataFactory = Set-AzDataFactoryV2 -ResourceGroupName $ResGrp.ResourceGroupName `
+    -Location $ResGrp.Location -Name $dataFactoryName
