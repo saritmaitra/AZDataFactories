@@ -1,16 +1,19 @@
 # pipeline in JSON format
 
 {
-  "name": "PipelineName",
-  "properties":
-  {
-    "description": "pipeline description",
-    "activities":
-    [
-    ],
-    "parameters": {
+    "name": "PipelineName",
+    "properties":
+    {
+        "description": "pipeline description",
+        "activities":
+        [
+        ],
+        "parameters": {
+        },
+        "concurrency": <your max pipeline concurrency>,
+        "annotations": [
+        ]
     }
-  }
 }
 
 # PipelineName: Specifies the name of the pipeline. Use a name that represents the action that the pipeline performs.
@@ -34,6 +37,56 @@
 
 # create a pipeline with a copy activity that uses the input and output datasets. 
 # The copy activity copies data from the file you specified in the input dataset settings to the file you specified in the output dataset settings.
+
+# concurrency: The maximum number of concurrent runs the pipeline can have. 
+# By default, there is no maximum. If the concurrency limit is reached, additional pipeline runs are queued until earlier ones complete
+# Type: Number, Required: No
+
+# Annotation: A list of tags associated with the pipeline
+# Type: Array, Required: No
+
+
+# The activities section can have one or more activities defined within it. 
+# 2 main types of activities: Execution and Control Activities.
+
+# EXCUTION
+
+{
+    "name": "Execution Activity Name",
+    "description": "description",
+    "type": "<ActivityType>",
+    "typeProperties":
+    {
+    },
+    "linkedServiceName": "MyLinkedService",
+    "policy":
+    {
+    },
+    "dependsOn":
+    {
+    }
+}
+
+# name: Name of the activity. Specify a name that represents the action that the activity performs.
+# Maximum number of characters: 55
+# Must start with a letter-number, or an underscore (_)
+# Following characters are not allowed: “.”, "+", "?", "/", "<",">","*"," %"," &",":"," "
+# Required: Yes
+
+# description: text describing what the activity or is used for
+# Required: Yes
+
+# Type of the activity e.g Data Movement Activities, Data Transformation Activities, and Control Activities 
+# Required: Yes
+
+# linkedServiceName: Name of the linked service used by the activity.
+# An activity may require that you specify the linked service that links to the required compute environment.
+
+
+
+
+
+
 {
     "name": "Adfv2QuickStartPipeline",
     "properties": {
