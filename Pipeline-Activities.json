@@ -81,6 +81,19 @@
 
 # linkedServiceName: Name of the linked service used by the activity.
 # An activity may require that you specify the linked service that links to the required compute environment.
+# Required: Yes for HDInsight Activity, Azure Machine Learning Studio (classic) Batch Scoring Activity, Stored Procedure Activity. No for all others
+
+# typeProperties: Properties in the typeProperties section depend on each type of activity. 
+# To see type properties for an activity, click links to the activity in the previous section.
+# Required: No
+
+# policy: Policies that affect the run-time behavior of the activity. 
+# This property includes a timeout and retry behavior. If it isn't specified, default values are used.
+# Required: No
+
+# dependsOn: This property is used to define activity dependencies, and how subsequent activities depend on previous activities. 
+# For more information, see Activity dependency
+# Required: No
 
 
 
