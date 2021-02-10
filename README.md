@@ -20,4 +20,5 @@ There is no hard limit on the number of integration runtime instances you can ha
 
 More on limit dtails can be seen at:
 https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits#data-factory-limits
+
 https://github.com/MicrosoftDocs/azure-docs/blob/master/includes/azure-data-factory-limits.md
