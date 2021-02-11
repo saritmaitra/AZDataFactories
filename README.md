@@ -22,3 +22,21 @@ More on limit dtails can be seen at:
 https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits#data-factory-limits
 
 https://github.com/MicrosoftDocs/azure-docs/blob/master/includes/azure-data-factory-limits.md
+
+# Specify an access tier for blob data
+General-purpose v2 accounts support all Azure storage services and data objects, but access tiers are available only to block blobs within Blob storage. When we upgrade to a general-purpose v2 storage account, we can specify a default account access tier of hot or cool, which indicates the default tier our blob data will be uploaded as if the individual blob access tier parameter is not specified.
+
+Blob access tiers enable us to choose the most cost-effective storage based on your anticipated usage patterns. Block blobs can be stored in a hot, cool, or archive tiers. For more information on access tiers can be found here: https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-storage-tiers
+
+By default, a new storage account is created in the hot access tier, and a general-purpose v1 storage account can be upgraded to either the hot or cool account tier. If an account access tier is not specified on upgrade, it will be upgraded to hot by default. If we are exploring which access tier to use for your upgrade, consider our current data usage scenario. There are two typical user scenarios for migrating to a general-purpose v2 account:
+
+- we have an existing general-purpose v1 storage account and want to evaluate an upgrade to a general-purpose v2 storage account, with the right storage access tier for blob data.
+- we have decided to use a general-purpose v2 storage account or already have one and want to evaluate whether we should use the hot or cool storage access tier for blob data.
+
+In both cases, the first priority is to estimate the cost of storing, accessing, and operating on our data stored in a general-purpose v2 storage account and compare that against our current costs.
+
+## Pricing & billing details can be found here: 
+https://docs.microsoft.com/en-us/azure/storage/common/storage-account-upgrade?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&tabs=azure-powershell
+
+# Recover a deleted storage account
+https://docs.microsoft.com/en-us/azure/storage/common/storage-account-recover?toc=/azure/storage/blobs/toc.json
