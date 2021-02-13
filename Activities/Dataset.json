@@ -1,0 +1,105 @@
+# dataset is the representation or reference to the actual data in the data store.
+# For a data movement activity like a Copy activity, we can set a source and a sink dataset accordingly for the data movement.
+# Fore example, copy data from Azure Blob Storage to a SQL database, you create two linked services: Azure Blob Storage and Azure SQL
+# Database. Then, create two datasets: an Azure Blob dataset (which refers to the Azure Storage linked service) and an Azure SQL table dataset
+# (which refers to the Azure SQL Database linked service). The Azure Storage and Azure SQL Database linked services contain connection
+# strings that Azure Data Factory uses at runtime to connect to your Azure storage and Azure SQL database, respectively. The Azure Blob dataset
+# specifies the blob container and blob folder that contains the input blobs in your Blob Storage. The Azure SQL table dataset specifies the SQL table
+# in our SQL database to which the data is to be copied.
+
+{
+  "name": "<name of dataset>",
+  "properties": {
+    "type": "<type of dataset: AzureBlob, AzureSql etc...>",
+    "linkedServiceName": {
+      "referenceName": "<name of linked service>",
+      "type": "LinkedServiceReference",
+    },
+    "structure": [
+      {
+        "name": "<Name of the column>",
+        "type": "<Name of the type>"
+      }
+    ],
+    "typeProperties": {
+      "<type specific property>": "<value>",
+      "<type specific property 2>": "<value 2>",
+    }
+  }
+}
+      
+      
+# name: This specifies the name of the dataset. It has the same naming rules as the ADF instance name.
+# Required: Yes
+
+# type: This specifies the type of the dataset. Specify one of the types supported by the ADF instance (for example, AzureBlob, AzureSqlTable).
+# Required: Yes
+
+# structure: This specifies the schema of the dataset. For details, see “Dataset Structure.”
+# Required: No
+
+# typeProperties: The type properties are different for each type (for example, AzureBlob, AzureSqlTable). For details on the supported types and their
+# properties, see “Dataset Type.”
+# Required: Yes     
+
+
+# In below procedure, we create two datasets: InputDataset and OutputDataset. 
+# These datasets are of type Binary. 
+# They refer to the Azure Storage linked service that you created in the previous section. 
+# The input dataset represents the source data in the input folder. 
+# In the input dataset definition, we specify the blob container (adftutorial), the folder (input), and the file (emp.txt) that contain the source data. 
+# The output dataset represents the data that's copied to the destination. 
+# In the output dataset definition, you specify the blob container (adftutorial), the folder (output), and the file to which the data is copied.
+      
+
+
+{
+    "name": "InputDataset",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "AzureStorageLinkedService",
+            "type": "LinkedServiceReference"
+        },
+        "annotations": [],
+        "type": "Binary",
+        "typeProperties": {
+            "location": {
+                "type": "AzureBlobStorageLocation",
+                "fileName": "emp.txt",
+                "folderPath": "input",
+                "container": "adftutorial"
+            }
+        }
+    }
+}
+
+
+# To create the dataset: InputDataset, run the Set-AzDataFactoryV2Dataset
+Set-AzDataFactoryV2Dataset -DataFactoryName $DataFactory.DataFactoryName `
+    -ResourceGroupName $ResGrp.ResourceGroupName -Name "InputDataset" `
+    -DefinitionFile ".\InputDataset.json"
+
+# Repeat the steps to create the output dataset
+{
+    "name": "OutputDataset",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "AzureStorageLinkedService",
+            "type": "LinkedServiceReference"
+        },
+        "annotations": [],
+        "type": "Binary",
+        "typeProperties": {
+            "location": {
+                "type": "AzureBlobStorageLocation",
+                "folderPath": "output",
+                "container": "adftutorial"
+            }
+        }
+    }
+}
+
+# Run the Set-AzDataFactoryV2Dataset cmdlet to create the OutDataset
+Set-AzDataFactoryV2Dataset -DataFactoryName $DataFactory.DataFactoryName `
+    -ResourceGroupName $ResGrp.ResourceGroupName -Name "OutputDataset" `
+    -DefinitionFile ".\OutputDataset.json"
