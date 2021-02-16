@@ -1,0 +1,32 @@
+{
+    "properties": {
+        "name": "MyTrigger",
+        "type": "ScheduleTrigger",
+        "typeProperties": {
+            "recurrence": {
+                "frequency": "Minute",
+                "interval": 15,
+                "startTime": "2017-12-08T00:00:00Z",
+                "endTime": "2017-12-08T01:00:00Z",
+                "timeZone": "UTC"
+            }
+        },
+        "pipelines": [{
+                "pipelineReference": {
+                    "type": "PipelineReference",
+                    "referenceName": "Adfv2QuickStartPipeline"
+                },
+                "parameters": {
+                    "inputPath": "adftutorial/input",
+                    "outputPath": "adftutorial/output"
+                }
+            }
+        ]
+    }
+}
+
+
+# For UTC timezone, the startTime and endTime need to follow format 'yyyy-MM-ddTHH:mm:ssZ', while for other timezones, startTime and endTime follow 'yyyy-MM-ddTHH:mm:ss'.
+
+# Per ISO 8601 standard, the Z suffix to timestamp mark the datetime to UTC timezone, and render timeZone field useless. 
+# While missing Z suffix for UTC time zone will result in an error upon trigger activation.
