@@ -40,3 +40,11 @@ https://docs.microsoft.com/en-us/azure/storage/common/storage-account-upgrade?to
 
 # Recover a deleted storage account
 https://docs.microsoft.com/en-us/azure/storage/common/storage-account-recover?toc=/azure/storage/blobs/toc.json
+
+## Trigger Ref:
+https://docs.microsoft.com/en-us/azure/data-factory/how-to-create-schedule-trigger
+
+##Event Based Trigger Properties
+- @triggerBody().folderPath
+- @triggerBody().fileName
+
