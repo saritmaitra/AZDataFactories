@@ -47,4 +47,5 @@ https://docs.microsoft.com/en-us/azure/data-factory/how-to-create-schedule-trigg
 ##Event Based Trigger Properties
 - @triggerBody().folderPath
 - @triggerBody().fileName
+- @endswith(item().name.'.csv')
 
