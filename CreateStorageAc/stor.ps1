@@ -16,10 +16,15 @@ $ResGrp = New-AzResourceGroup $resourceGroupName -location $location
 # If we're not sure which region to specify for the -Location parameter
 Get-AzLocation | select Location
 
+
+# Create storage account
+$storageaccount = "new_storage_account_name"
+#$location = "region_name"
+
 # create a general-purpose v2 storage account with read-access geo-redundant storage (RA-GRS) by using the New-AzStorageAccount command. 
 # name of our storage account must be unique across Azure, so replace the placeholder value in brackets with our own unique value:
-New-AzStorageAccount -ResourceGroupName $resourceGroup `
-  -Name <account-name> `
+New-AzStorageAccount -ResourceGroupName $ResGrp `
+  -Name $storageaccount `
   -Location $location `
   -SkuName Standard_RAGRS `
   -Kind StorageV2
@@ -37,7 +42,7 @@ New-AzStorageAccount -ResourceGroupName $resourceGroup `
 $storageaccount = "new_storage_account_name"
 $location = "region_name"
 
-New-AzStorageAccount -ResourceGroupName $resourcegroup -Name $storageaccount -Location $location -Kind "BlockBlobStorage" -SkuName "Premium_LRS"
+#New-AzStorageAccount -ResourceGroupName $resourcegroup -Name $storageaccount -Location $location -Kind "BlockBlobStorage" -SkuName "Premium_LRS"
 
 #  Enabling this setting with your BlockBlobStorage account gives you the premium tier for Data Lake Storage.
 # If you want to optimize your storage account for data analytics, then add
