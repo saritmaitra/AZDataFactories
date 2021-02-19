@@ -16,6 +16,13 @@ New-AzStorageAccount -ResourceGroupName $resourceGroup `
   -Location $location `
   -SkuName Standard_RAGRS `
   -Kind StorageV2
+
+# Standard_LRS	(Locally-redundant storage)
+# Standard_ZRS	(Zone-redundant storage)
+# Standard_GRS	(Geo-redundant storage)
+# Standard_RAGRS	(Read access geo-redundant storage)
+# Premium_LRS	(Premium locally-redundant storage)
+# Premium_ZRS	(Premium zone-redundant storage)
   
 # Delete a storage account
 # Deleting a storage account deletes the entire account, including all data in the account, and cannot be undone.
@@ -51,3 +58,7 @@ New-AzStorageAccount -ResourceGroupName $resourcegroup -Name $storageaccount -Lo
 Set-AzStorageAccount -ResourceGroupName <resource-group> -Name <storage-account> -UpgradeToStorageV2 -AccessTier <Hot/Cool>
 
 # Specify an access tier for blob data
+
+
+#create storage container
+New-AzStorageContainer -Name {container-name}
