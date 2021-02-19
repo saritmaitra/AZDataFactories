@@ -1,9 +1,11 @@
 # Sign in to your Azure subscription
 Connect-AzAccount
 
-# put resource group in a variable so you can use the same group name going forward, without hard-coding it repeatedly
-$resourceGroup = "storage-resource-group"
-$location = "westus"
+# put resource group in a variable so we can use the same group name going forward, without hard-coding it repeatedly
+$resourceGroupName = "saritRG";
+$location = 'East US'
+
+$ResGrp = New-AzResourceGroup $resourceGroupName -location $location
 New-AzResourceGroup -Name $resourceGroup -Location $location
 
 # If we're not sure which region to specify for the -Location parameter
