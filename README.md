@@ -1,3 +1,19 @@
+"business": { 
+    "valueChainPosition": [ 
+        { 
+        "name": "40f84db008a8374963eecad27f26ae53" 
+        } 
+], 
+    "strategy": "b2d7b534b5d51a72dad2be2586b30f13", 
+    "openSystem": "cfcd208495d565ef66e7dff9f98764da", 
+    "technology": [ 
+        { 
+        "name": "3e5151615461e3999f26d793c68580f7" 
+        } 
+], 
+    "keywords": []
+
+
 # AZDataFactories
 
 ## New features for SSIS in Data Factory
