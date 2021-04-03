@@ -1,7 +1,3 @@
-
-![](images/ETL.PNG)
-
-
 # AZDataFactories
 
 ## New features for SSIS in Data Factory
