@@ -1,3 +1,5 @@
+where you treat the model artifact as a dependency that is built and packaged within the consuming application.
+
 # AZDataFactories
 
 ## New features for SSIS in Data Factory
